@@ -1,13 +1,3 @@
-// import "./styles.css";
-
-// export default function App() {
-//   return (
-//     <div className="App">
-//       <h1>Hello CodeSandbox</h1>
-//       <h2>Start editing to see some magic happen!</h2>
-//     </div>
-//   );
-// }
 import React from "react";
 import "./App.css";
 import TodoContainer from "./components/TodoContainer";
@@ -41,9 +31,16 @@ class App extends React.Component {
     });
   }
 
-  editTodo(id) {
+  editTodo(editByID) {
     // to directly modify the description and status
-    console.log(id.description, id.status);
+    //const updateID = (id.description, id.status);
+    this.setState({
+      ...todos,
+        id: editByID.id,
+          title: editByID.target.value,
+          description: editByID.target.value,
+          status: editByID.target.value
+    });
     //const updateTodo =
   }
 
